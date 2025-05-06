@@ -1,179 +1,299 @@
-\documentclass[UTF8]{beamer} % UTF8 option for ctex is often preferred
-\usepackage{ctex}       % 支持中文
-\usepackage{amsmath}    % 数学公式
-\usepackage{amssymb}    % For math symbols like \mathbb
-% \usepackage{graphicx} % If you plan to add images
-% \usepackage{booktabs} % For better tables, if needed
+\documentclass[UTF8]{beamer}
+\usepackage{ctex} % 支持中文
+\usepackage{amsmath}
+\usepackage{amssymb} % For symbols like \mathbb{E}, \lim, \sum
+\usepackage{graphicx} % For \includegraphics
 
-% \usetheme{default} % Original theme
-\usetheme{Madrid}    % A popular, clean theme with a sidebar
-\usecolortheme{dolphin} % A pleasant color theme
+% --- Theme and Appearance ---
+\usetheme{Madrid}
+\usecolortheme{default}
 
-% Optional: Remove navigation symbols at the bottom if the sidebar is sufficient
-% \setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{navigation symbols}{}
+
+% --- Custom Colors for Beamer Blocks ---
+\setbeamercolor{block title}{bg=blue!20!white, fg=black}
+\setbeamercolor{block body}{bg=blue!5!white, fg=black}
+\setbeamercolor{example title}{bg=green!20!white, fg=black}
+\setbeamercolor{example body}{bg=green!5!white, fg=black}
+\setbeamercolor{alertblock title}{bg=red!20!white, fg=black}
+\setbeamercolor{alertblock body}{bg=red!5!white, fg=black}
+
+% --- Define math operators for better typography ---
+\DeclareMathOperator{\E}{\operatorname{E}}
+\DeclareMathOperator{\Var}{\operatorname{Var}}
+\DeclareMathOperator{\Prob}{\operatorname{P}}
 
 \title{第七讲 大数定律}
-\subtitle{概率论的基石：从理论到应用} % Optional: Add a subtitle
+\subtitle{正态分布的普遍性与柯西分布的特殊性} % New subtitle to reflect the focus
 \author{龚鹤扬}
-\institute{上海芯梯科技有限公司} % Standard field for institute
+\institute{中国科学技术大学统计学博士 \\ 上海芯梯科技有限公司}
 \date{\today}
 
 \begin{document}
 
-\frame{\titlepage}
+\begin{frame}
+    \titlepage
+\end{frame}
 
-% Optional: Add a table of contents slide
-\begin{frame}{本讲纲要}
+\begin{frame}{目录}
     \tableofcontents
 \end{frame}
 
 \section{引言}
-\begin{frame}{引言：大数定律的直观与重要性}
+\begin{frame}[shrink=10]{引言：大数定律的重要性与适用性}
+    \framesubtitle{随机现象中的规律性}
     \begin{itemize}
-        \item 本章讨论概率论中一组核心的极限定理——\alert{大数定律}。
-        \pause
-        \item 描述了在大量重复独立试验中，事件发生的\alert{频率}如何逼近其\alert{概率}，或者\alert{样本均值}如何收敛于\alert{总体期望}的现象。
-        \pause
-        \item 是连接 \alert{理论概率} 与 \alert{统计推断} 的关键桥梁。
-        \pause
-        \item 为许多统计方法的合理性提供了坚实的理论基础。
+        \item 本讲讨论概率论中一组重要的极限定理——\alert{大数定律 (Law of Large Numbers, LLN)}。
+        \item 核心思想：在大量重复试验中，事件发生的\alert{频率}近似于其\alert{概率}，样本均值收敛于总体\alert{期望}。
+        \item 大数定律是连接\alert{理论概率}与\alert{统计推断}的桥梁。
+        \item \alert{重要前提}：大数定律的结论依赖于随机变量满足特定的\alert{条件}（如期望存在、方差有限等）。
+        \item 我们将以常见的\alert{正态分布}为例，说明大数定律如何在其条件下成立；并以\alert{柯西分布}为例，探讨当条件不满足时，大数定律为何失效。
     \end{itemize}
 \end{frame}
 
 \section{切比雪夫不等式}
-\begin{frame}{7.1 切比雪夫不等式 (Chebyshev's Inequality)}
+\begin{frame}[shrink=5]{7.1 切比雪夫不等式 (Chebyshev's Inequality)}
+    \framesubtitle{一个普适的概率上界}
     \begin{itemize}
         \item 切比雪夫不等式给出了随机变量偏离其期望值的概率的一个\alert{上界}。
         \item 这个界不依赖于随机变量的具体分布形式，只需要其\alert{期望}和\alert{方差}存在且有限。
     \end{itemize}
     \pause
-    \begin{block}{切比雪夫不等式}
-        设随机变量 X 具有期望 E(X) = μ 和方差 D(X) = σ² (其中 0 < σ² < +∞)。则对于任意正数 ε > 0，有：
-        \[ P(|X - \mu| \geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2} \]
-        或者等价地：
-        \[ P(|X - \mu| < \epsilon) \geq 1 - \frac{\sigma^2}{\epsilon^2} \]
+    \begin{block}{定理 7.1 (切比雪夫不等式)}
+        设随机变量 X 具有期望 $\E(X) = \mu$ 和方差 $\Var(X) = \sigma^2$ (其中 $0 < \sigma^2 < +\infty$)。
+        则对于任意正数 $\epsilon > 0$，有：
+        \[ \Prob(|X - \mu| \geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2} \]
     \end{block}
     \pause
-    \textbf{核心特点：}
+    \textbf{示例：正态分布}
     \begin{itemize}
-        \item \alert{普适性强}：对任何分布都成立（只要期望方差存在）。
-        \item \alert{界限较松}：实际应用中，这个上界往往比较宽松。
+        \item 对于正态分布 $N(\mu, \sigma^2)$，其期望为 $\mu$，方差为 $\sigma^2$ (\alert{均存在且有限})。
+        \item 因此，切比雪夫不等式适用于正态分布，为 $|X-\mu|$ 的偏离提供了一个（尽管可能宽松的）概率上界。
     \end{itemize}
 \end{frame}
 
-\section{弱大数定律}
-\begin{frame}{7.2 弱大数定律 (Weak Law of Large Numbers, WLLN)}
-    弱大数定律表明，当试验次数足够大时，样本均值\alert{依概率收敛}于总体期望。
-    \vspace{0.5cm}
-
-    \begin{block}{定理 (切比雪夫弱大数定律)}
-        设 X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>n</sub>, ... 是一列\alert{相互独立}、具有\alert{相同期望} E(X<sub>i</sub>) = μ 和\alert{相同有限方差} D(X<sub>i</sub>) = σ² < +∞ 的随机变量序列。令 S<sub>n</sub> = Σ<sub>i=1</sub><sup>n</sup> X<sub>i</sub> 为前 n 个随机变量之和， \( \bar{X}_n = S_n / n \) 为样本均值。则对于任意 ε > 0，有：
-        \[ \lim_{n \to \infty} P(|\bar{X}_n - \mu| < \epsilon) = 1 \]
-        或者等价地：
-        \[ \lim_{n \to \infty} P(|\bar{X}_n - \mu| \geq \epsilon) = 0 \]
-        这表示样本均值 \( \bar{X}_n \) \alert{依概率收敛}于 μ，记作 \( \bar{X}_n \xrightarrow{P} \mu \)。
+\section{弱大数定律 (WLLN)}
+\begin{frame}[shrink=5]{7.2 弱大数定律 (WLLN): 切比雪夫方法}
+    \framesubtitle{基于方差存在的依概率收敛}
+    \begin{block}{定理 7.2 (切比雪夫弱大数定律)}
+        设 $X_1, X_2, \dots, X_n, \dots$ 是一列\alert{相互独立}、具有相同期望 $\E(X_i) = \mu$ 和相同\alert{有限方差} $\Var(X_i) = \sigma^2 < +\infty$ 的随机变量序列。
+        令样本均值为 $\bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i$。
+        则对于任意 $\epsilon > 0$，有：
+        \[ \lim_{n \to \infty} \Prob(|\bar{X}_n - \mu| \geq \epsilon) = 0 \quad (\text{即 } \bar{X}_n \xrightarrow{P} \mu) \]
     \end{block}
+    \pause
+    \textbf{示例：正态分布序列}
+    \begin{itemize}
+        \item 若 $X_i \sim N(\mu, \sigma^2)$ 且相互独立，则它们满足切比雪夫WLLN的\alert{所有条件} (独立、同期望 $\mu$、同有限方差 $\sigma^2$)。
+        \item 因此，i.i.d. 正态随机变量的样本均值 $\bar{X}_n$ \alert{依概率收敛}于总体期望 $\mu$。
+    \end{itemize}
+    \footnotesize
+    \textit{注：此定理依赖于方差存在且有限，并通过切比雪夫不等式证明。}
 \end{frame}
 
 \begin{frame}{伯努利弱大数定律}
-    这是切比雪夫弱大数定律在伯努利试验下的一个重要特例。
-    \vspace{0.5cm}
-    \begin{block}{定理 (伯努利弱大数定律)}
-        设 n<sub>A</sub> 是 n 次独立重复伯努利试验中事件 A 发生的次数，p 是事件 A 在每次试验中发生的概率。则对于任意 ε > 0，有：
-        \[ \lim_{n \to \infty} P\left(\left| \frac{n_A}{n} - p \right| < \epsilon\right) = 1 \]
-        此定律说明了\alert{频率的稳定性}：当试验次数 n 很大时，事件的频率 n<sub>A</sub>/n 会以很高的概率接近其真实的概率 p。
+    \framesubtitle{频率的稳定性}
+    \begin{block}{定理 7.3 (伯努利弱大数定律)}
+        设 $n_A$ 是 $n$ 次独立重复伯努利试验中事件 A 发生的次数，$p$ 是事件 A 在每次试验中发生的概率。
+        令 $f_n = \frac{n_A}{n}$ 为事件 A 发生的频率。
+        则对于任意 $\epsilon > 0$: $\lim_{n \to \infty} \Prob\left(\left| f_n - p \right| \geq \epsilon\right) = 0$。
     \end{block}
+    \textit{注：这是切比雪夫WLLN的特例，因为伯努利变量 $X_i \sim B(1,p)$ 的 $\E(X_i)=p$ 且 $\Var(X_i)=p(1-p)$ 有限。}
 \end{frame}
 
-\section{强大数定律}
-\begin{frame}{7.3 强大数定律 (Strong Law of Large Numbers, SLLN)}
-    强大数定律比弱大数定律描述了更强的收敛性，它表明样本均值\alert{几乎必然收敛}于总体期望。
-    \vspace{0.5cm}
-
-    \begin{block}{定理 (柯尔莫哥洛夫强大数定律)}
-        设 X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>n</sub>, ... 是一列\alert{独立同分布} (i.i.d.) 的随机变量序列，且其共同期望 E(X<sub>i</sub>) = μ \alert{存在} (不要求方差存在或有限)。令 \( \bar{X}_n = (X_1 + ... + X_n) / n \)。则：
-        \[ P\left( \lim_{n \to \infty} \bar{X}_n = \mu \right) = 1 \]
-        这表示样本均值 \( \bar{X}_n \) \alert{几乎处处收敛} (Almost Surely Converge) 或以概率1收敛于 μ，记作 \( \bar{X}_n \xrightarrow{a.s.} \mu \)。
+\begin{frame}[shrink=10]{大数定律的边界：引入柯西分布}
+    \framesubtitle{当期望不再可靠}
+    \begin{itemize}
+        \item 切比雪夫WLLN要求\alert{方差有限}。许多其他版本的大数定律（如辛钦WLLN，柯尔莫哥洛夫SLLN）放宽了对方差的要求，但一个更核心的条件是：\alert{期望的存在性}。
+        \pause
+        \item \textbf{思考}：如果一个分布连期望都没有，样本均值会收敛到哪里呢？
+        \item \alert{柯西分布 (Cauchy Distribution)} 就是这样一个期望不存在的著名例子。
+    \end{itemize}
+    \pause
+    \begin{block}{柯西分布 $C(x_0, \gamma)$}
+        PDF: $f(x; x_0, \gamma) = \frac{1}{\pi\gamma [1 + ((x-x_0)/\gamma)^2]}$
+        \begin{itemize}
+            \item $x_0$: 位置参数 (中位数), $\gamma$: 尺度参数。
+            \item 标准柯西 $C(0,1)$ ($x_0=0, \gamma=1$): $f(x) = \frac{1}{\pi (1+x^2)}$。
+            \item 特点：重尾，\alert{期望 $\E(X)$ 不存在}，\alert{方差 $\Var(X)$ 无限大}。
+        \end{itemize}
     \end{block}
     \pause
-    \begin{alertblock}{注意}
-        SLLN 的条件 (i.i.d. 且期望存在) 与切比雪夫 WLLN 的条件 (独立、同期望、同有限方差) 不同。SLLN 对随机变量的分布限制更少 (不要求方差有限)，但要求同分布。
-    \end{alertblock}
+    \textit{这意味着柯西分布\alert{不满足}切比雪夫WLLN的方差条件，也不满足后续WLLN/SLLN的期望存在条件。}
 \end{frame}
 
-\begin{frame}{WLLN 与 SLLN 的对比}
-    \textbf{核心区别}：
+\begin{frame}[shrink=10]{可视化：正态 vs. 柯西样本均值路径}
+    \framesubtitle{大数定律的生效与失效}
+    观察i.i.d.序列样本均值 $\bar{X}_n$ 随样本量 $n$ 增大的典型路径：
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \textbf{正态分布 $N(0,1)$}\\($\E(X)=0$, $\Var(X)=1$)
+            \begin{figure}
+                \includegraphics[width=\linewidth]{normal_mean_convergence.png} % REPLACE
+                \caption{$\bar{X}_n$ 快速稳定收敛到 $\mu=0$}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{柯西分布 $C(0,1)$}\\($\E(X)$ 不存在)
+            \begin{figure}
+                \includegraphics[width=\linewidth]{cauchy_mean_no_convergence.png} % REPLACE
+                \caption{$\bar{X}_n$ 持续剧烈波动, \alert{不收敛}}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    \textbf{启示}：
     \begin{itemize}
-        \item \textbf{收敛模式}：
-            \begin{itemize}
-                \item WLLN (依概率收敛 \( \xrightarrow{P} \))：
-                \[ \forall \epsilon > 0, \lim_{n \to \infty} P(|\bar{X}_n - \mu| \geq \epsilon) = 0 \]
-                指对于任意小的 $\epsilon$ 和 $\delta$，总存在 $N$，当 $n > N$ 时，$\bar{X}_n$ 落在 $(\mu-\epsilon, \mu+\epsilon)$ \alert{之外的概率小于 $\delta$}。
-                \pause
-                \item SLLN (几乎必然收敛 \( \xrightarrow{a.s.} \))：
-                \[ P\left( \lim_{n \to \infty} \bar{X}_n = \mu \right) = 1 \]
-                指 $\bar{X}_n$ 的序列\alert{几乎必然会收敛到 $\mu$}。也就是说，除了一个概率为零的例外集合，对于每一个样本路径，当 $n \to \infty$ 时，$\bar{X}_n \to \mu$。
-            \end{itemize}
-        \pause
-        \item \textbf{强度}：
-            \begin{itemize}
-                \item SLLN \alert{更强}。几乎必然收敛 \alert{蕴含} 依概率收敛 (SLLN $\implies$ WLLN)。
-            \end{itemize}
-        \pause
-        \item \textbf{直观解释}：
-            \begin{itemize}
-                \item WLLN：当 $n$ 很大时，$\bar{X}_n$ \textit{不太可能} 偏离 $\mu$ 太远。
-                \item SLLN：当 $n$ 趋于无穷时，$\bar{X}_n$ \textit{最终会等于} $\mu$ (除概率为0的例外)。
-            \end{itemize}
-        \end{itemize}
+        \item 正态分布的样本均值行为良好，符合大数定律预期。
+        \item 柯西分布的极端值持续"污染"样本均值，使其无法稳定。
+    \end{itemize}
 \end{frame}
 
-\section{大数定律的应用}
-\begin{frame}{7.4 大数定律的应用 (Applications of LLN)}
-    大数定律是概率论与数理统计之间重要的理论基石，应用广泛：
+\begin{frame}[shrink=10]{WLLN (续): 辛钦弱大数定律}
+    \framesubtitle{期望存在即可 (i.i.d.情况)}
+    \begin{block}{定理 7.4 (辛钦弱大数定律)}
+        设 $X_1, X_2, \dots$ 是一列\alert{独立同分布 (i.i.d.)} 随机变量，其共同期望 $\E(X_i) = \mu$ \alert{存在} ($|\mu| < \infty$)。
+        则样本均值 $\bar{X}_n = \frac{1}{n} \sum X_i \xrightarrow{P} \mu$。
+    \end{block}
+    \pause
+    \textbf{对比应用：}
     \begin{itemize}
-        \item \textbf{理论基础}：
+        \item \textbf{正态分布 $N(\mu, \sigma^2)$：}
             \begin{itemize}
-                \item 为用\alert{频率近似概率}提供了理论依据 (伯努利大数定律)。
-                \item 解释了为什么在大量重复试验中，随机事件的\alert{平均结果趋于稳定}。
+                \item i.i.d.，期望 $\mu$ \alert{存在}。
+                \item $\implies$ 满足辛钦WLLN条件，$\bar{X}_n \xrightarrow{P} \mu$。 (无需有限方差)
             \end{itemize}
-        \pause
-        \item \textbf{统计推断}：
+        \item \textbf{柯西分布 $C(x_0, \gamma)$：}
             \begin{itemize}
-                \item \alert{参数估计}：用样本均值估计总体期望是矩估计法等方法的基础。
-                \item \alert{蒙特卡洛方法}：通过大量随机抽样和计算样本均值来估计复杂问题的数值解 (如积分、期望)。
-            \end{itemize}
-        \pause
-        \item \textbf{实际行业应用}：
-            \begin{itemize}
-                \item \alert{风险管理与保险}：保险公司能够通过大数定律较准确地预测赔付总额，从而制定合理的保费。
-                \item \alert{质量控制}：通过抽样检查产品并计算次品率，来判断整批产品的质量水平。
+                \item i.i.d.，但期望\alert{不存在}。
+                \item $\implies$ \alert{不满足}辛钦WLLN条件，其结论不适用。
             \end{itemize}
     \end{itemize}
+\end{frame}
+
+\section{强大数定律 (SLLN)}
+\begin{frame}[shrink=10]{7.3 强大数定律 (SLLN): 柯尔莫哥洛夫}
+    \framesubtitle{更强的几乎必然收敛 (i.i.d.情况)}
+    \begin{block}{定理 7.5 (柯尔莫哥洛夫强大数定律)}
+        设 $X_1, X_2, \dots$ 是一列\alert{独立同分布 (i.i.d.)} 随机变量，其共同期望 $\E(X_i) = \mu$ \alert{存在} ($|\mu| < \infty$)。
+        则样本均值 $\bar{X}_n = \frac{1}{n} \sum X_i \xrightarrow{a.s.} \mu$。
+        ($\Prob(\lim_{n \to \infty} \bar{X}_n = \mu) = 1$)
+    \end{block}
+    \pause
+    \textbf{对比应用：}
+    \begin{itemize}
+        \item \textbf{正态分布 $N(\mu, \sigma^2)$：}
+            \begin{itemize}
+                \item i.i.d.，期望 $\mu$ \alert{存在}。
+                \item $\implies$ 满足柯尔莫哥洛夫SLLN条件，$\bar{X}_n \xrightarrow{a.s.} \mu$。 (结论更强)
+            \end{itemize}
+        \item \textbf{柯西分布 $C(x_0, \gamma)$：}
+            \begin{itemize}
+                \item i.i.d.，但期望\alert{不存在}。
+                \item $\implies$ \alert{不满足}SLLN条件，其结论不适用。
+            \end{itemize}
+    \end{itemize}
+    \footnotesize
+    \textit{SLLN条件与辛钦WLLN相同 (i.i.d.且期望存在)，但结论更强 (几乎必然收敛)。}
+\end{frame}
+
+\begin{frame}[shrink=5]{WLLN 与 SLLN 的区别与联系}
+    \framesubtitle{依概率收敛 ($\xrightarrow{P}$) vs. 几乎必然收敛 ($\xrightarrow{a.s.}$)}
+    \begin{columns}[T]
+      \begin{column}{0.5\textwidth}
+        \textbf{WLLN ($\xrightarrow{P}$)}:
+        \begin{itemize}
+            \item $\lim_{n \to \infty} \Prob(|\bar{X}_n - \mu| \geq \epsilon) = 0$
+            \item 关注\alert{概率}：当$n$大时，$\bar{X}_n$偏离$\mu$很远的\alert{可能性}很小。
+            \item 不排除在某些$n$处，$\bar{X}_n$可能偏离$\mu$较远，但这种事件发生的概率随$n$趋于0。
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \textbf{SLLN ($\xrightarrow{a.s.}$)}:
+        \begin{itemize}
+            \item $\Prob(\lim_{n \to \infty} \bar{X}_n = \mu) = 1$
+            \item 关注\alert{样本路径}：对于\alert{几乎所有}的随机试验序列，$\bar{X}_n$的极限\alert{就是}$\mu$。
+            \item 意味着除了一个概率为0的例外集合，$\bar{X}_n$最终会"停在"$\mu$处。
+        \end{itemize}
+      \end{column}
+    \end{columns}
+    \pause
+    \textbf{强度与适用：} SLLN $\implies$ WLLN (几乎必然收敛更强)。
+    \begin{itemize}
+        \item \textbf{正态分布 $N(\mu, \sigma^2)$ (i.i.d.):} 期望 $\mu$ 存在。
+            \begin{itemize}
+                \item $\bar{X}_n \xrightarrow{P} \mu$ (由辛钦WLLN)
+                \item $\bar{X}_n \xrightarrow{a.s.} \mu$ (由柯尔莫哥洛夫SLLN)
+            \end{itemize}
+        \item \textbf{柯西分布 $C(x_0, \gamma)$ (i.i.d.):} 期望不存在。
+            \begin{itemize}
+                \item $\bar{X}_n$ \alert{不}依概率收敛，也\alert{不}几乎必然收敛到任何常数。
+                \item \alert{惊人事实}：若 $X_i \sim C(0,1)$ i.i.d.，则 $\bar{X}_n \sim C(0,1)$ 对所有$n$都成立！
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section{大数定律的应用与警示}
+\begin{frame}[shrink=5]{7.4 大数定律的应用与警示}
+    \framesubtitle{理论指导实践，条件决定成败}
+    大数定律是概率论与数理统计的重要基石：
+    \begin{itemize}
+        \item \textbf{频率稳定性}：为用频率近似概率提供了理论依据 (伯努利WLLN)。
+        \item \textbf{参数估计}：样本均值 $\bar{X}_n$ 是总体期望 $\mu$ 的\alert{一致估计量}。
+            \begin{itemize}
+                \item \textit{例如：对于正态总体 $N(\mu, \sigma^2)$，用 $\bar{X}_n$ 估计 $\mu$ 是合理的。}
+                \item \alert{警示}：\textit{若总体为柯西分布，$\bar{X}_n$ 不是其位置参数 $x_0$ 的一致估计量 (因 $\mu$ 不存在，LLN不适用)。用中位数估计 $x_0$ 更稳健。}
+            \end{itemize}
+        \item \textbf{蒙特卡洛方法}：通过大量随机抽样，用样本均值估计复杂积分或期望。
+            \begin{itemize}
+                \item \textit{适用于被积函数对应随机变量期望存在的情况。}
+            \end{itemize}
+        \item \textbf{风险管理与保险}：预测平均赔付，依赖于大量事件下平均损失的稳定性。
+        \item \textbf{物理与工程}：多次测量的平均值通常比单次测量更接近真实值。
+            \begin{itemize}
+                \item \alert{警示}：\textit{如果测量误差服从柯西分布，增加测量次数并取平均\alert{无益于}提高精度！}
+            \end{itemize}
+    \end{itemize}
+    \textbf{核心：大数定律的应用有效性，强依赖于其\alert{前提条件}（尤其是期望存在）是否满足。}
 \end{frame}
 
 \section{总结与展望}
-\begin{frame}{总结与展望}
-    \begin{block}{本章回顾}
-    \begin{itemize}
-        \item \textbf{切比雪夫不等式}：提供了概率估计的一个通用（但较宽松）的界。
-        \item \textbf{弱大数定律 (WLLN)}：阐述了样本均值依概率收敛于总体期望。
-            \begin{itemize}
-                \item 切比雪夫WLLN：独立、同期望、同有限方差。
-                \item 伯努利WLLN：频率依概率收敛于概率。
-            \end{itemize}
-        \item \textbf{强大数定律 (SLLN)}：阐述了样本均值几乎必然收敛于总体期望 (更强的收敛形式)。
-            \begin{itemize}
-                \item 柯尔莫哥洛夫SLLN：独立同分布、期望存在。
-            \end{itemize}
-        \item 大数定律是频率解释概率、参数估计、蒙特卡洛模拟等众多统计思想的\alert{理论支柱}。
-    \end{itemize}
+\begin{frame}[shrink=10]{总结与展望}
+    \begin{block}{本讲小结：大数定律的精髓与边界}
+        \begin{itemize}
+            \item \textbf{切比雪夫不等式}：提供了概率的通用上界（需期望、方差存在）。
+            \item \textbf{大数定律}：描述样本均值在特定条件下收敛于总体期望。
+                \begin{itemize}
+                    \item WLLN (依概率 $\xrightarrow{P}$)，SLLN (几乎必然 $\xrightarrow{a.s.}$)。SLLN更强。
+                    \item 关键版本 (辛钦WLLN, 柯尔莫哥洛夫SLLN) 要求i.i.d.且\alert{期望存在}。
+                \end{itemize}
+            \item \textbf{正态分布 (i.i.d., $\E(X)=\mu$ 存在)}:
+                \begin{itemize}
+                    \item 样本均值 $\bar{X}_n \xrightarrow{P} \mu$ 且 $\bar{X}_n \xrightarrow{a.s.} \mu$。大数定律完美适用。
+                \end{itemize}
+            \item \textbf{柯西分布 (i.i.d., $\E(X)$ \alert{不存在})}:
+                \begin{itemize}
+                    \item 样本均值 $\bar{X}_n$ \alert{不收敛}。大数定律\alert{不适用}。
+                    \item $\bar{X}_n$ 仍服从柯西分布，揭示了期望不存在时的特殊性。
+                \end{itemize}
+            \item 理解大数定律的\alert{条件和局限性}对正确应用至关重要。
+        \end{itemize}
     \end{block}
     \pause
-    \begin{alertblock}{展望}
-        大数定律有多种形式和更广泛的推广 (如马尔可夫、辛钦大数定律，以及对非独立序列的推广)。
-        接下来，我们将学习另一个核心的极限定理——\alert{中心极限定理}，它将告诉我们样本均值围绕总体期望波动的具体分布形态。
+    \begin{alertblock}{展望：中心极限定理 (CLT)}
+        \begin{itemize}
+            \item 大数定律告诉我们样本均值\alert{收敛到哪里}。
+            \item 下一步，\alert{中心极限定理 (CLT)} 将揭示：当 $n$ 很大时，样本均值围绕总体期望的\alert{波动形态}近似于何种分布 (通常是正态分布)。
+            \item CLT 也有其前提条件，如经典的Lindeberg-Lévy CLT要求i.i.d.且具有\alert{有限的期望和方差}。这对正态分布适用，但对柯西分布 (因方差无限) 则不适用标准CLT。
+        \end{itemize}
     \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \Huge{\bfseries 谢谢聆听！}
+    \vspace{1cm}
+    \normalsize
+    问题与讨论
 \end{frame}
 
 \end{document}

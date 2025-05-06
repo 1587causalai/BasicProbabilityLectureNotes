@@ -1,16 +1,17 @@
 # Fdb version 4
-["xdvipdfmx"] 1746544348.91543 "gemini_2_5flash.xdv" "gemini_2_5flash.pdf" "gemini_2_5flash" 1746544349.26006 0
-  "gemini_2_5flash.xdv" 1746544348.8539 193624 e1b1bb2359d5b81a52cafff6a5d0bcb0 "xelatex"
+["xdvipdfmx"] 1746556121.3361 "gemini_2_5flash.xdv" "gemini_2_5flash.pdf" "gemini_2_5flash" 1746556122.3246 0
+  "gemini_2_5flash.xdv" 1746556121.26791 290660 8cd6811181ae9803ee9a1b365b4a36f5 "xelatex"
   (generated)
   "gemini_2_5flash.pdf"
   (rewritten before read)
-["xelatex"] 1746544347.59764 "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash.tex" "gemini_2_5flash.xdv" "gemini_2_5flash" 1746544349.2583 0
+["xelatex"] 1746556119.79682 "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash.tex" "gemini_2_5flash.xdv" "gemini_2_5flash" 1746556122.32278 0
   "/System/Library/Fonts/Menlo.ttc" 1744434969 2156036 ec05dfca6821d85440da0899493002c3 ""
-  "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash.tex" 1746544336.05767 13021 72d0bb486d18cacfd0e650d8b2fe5bb3 ""
+  "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash.tex" 1746556107.92724 20171 1a18862b25aa6ffd8e28aee360faf87b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1246382020 996 a18840b13b499c08ac2de96a99eda4bc ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -21,12 +22,15 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1136768653 1524 d89e2d087a9828407a196f428428ef4a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1136768653 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty" 1576016050 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
@@ -217,11 +221,14 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1723821489 10850182 43dc9ce46ab4b00500812cf30f5c84fc ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "gemini_2_5flash.aux" 1746544348.85274 4156 33ef7b4efd5f0657685b5e0dd0470f47 "xelatex"
-  "gemini_2_5flash.nav" 1746544348.85381 2319 061a7d579f9afd511b9e0648b7de38d9 "xelatex"
-  "gemini_2_5flash.out" 1746544348.85356 594 145a496a7c7b1afa6bc13679232dcb1b "xelatex"
-  "gemini_2_5flash.tex" 1746544336.05767 13021 72d0bb486d18cacfd0e650d8b2fe5bb3 ""
-  "gemini_2_5flash.toc" 1746544348.85385 326 51718e2952ecdfd405b97199f83a26af "xelatex"
+  "cauchy_mean_no_convergence.png" 1746554865.44103 154211 e199447afa8d294a7c377def7e038dff ""
+  "gemini_2_5flash.aux" 1746556121.26678 4841 b7bde95ef9fa75ca2082991c2fb8e5e5 "xelatex"
+  "gemini_2_5flash.nav" 1746556121.26785 2691 f121806110d2f40fc100c8e3b211e5ee "xelatex"
+  "gemini_2_5flash.out" 1746556121.26761 594 145a496a7c7b1afa6bc13679232dcb1b "xelatex"
+  "gemini_2_5flash.tex" 1746556107.92724 20171 1a18862b25aa6ffd8e28aee360faf87b ""
+  "gemini_2_5flash.toc" 1746556121.26787 326 d5aad2bc4c9b0da83933d4208d36f40c "xelatex"
+  "normal_mean_convergence.png" 1746554865.26126 169540 4bd102cba67875834173d2fd2bdd236e ""
+  "pdf_normal_cauchy_comparison.png" 1746555861.33232 50721 d9f3de3322ee62e9b1d92ad5275c0ec6 ""
   (generated)
   "gemini_2_5flash.aux"
   "gemini_2_5flash.log"
