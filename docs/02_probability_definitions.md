@@ -31,7 +31,7 @@
 ## 2.4 公理化定义 (Axiomatic Definition of Probability)
 
 由柯尔莫哥洛夫 (Kolmogorov) 提出，概率 P(A) 是定义在样本空间 Ω 的事件域 F (一个事件代数或 σ-代数) 上的一个实值函数，它满足以下三条公理：
-1.  **非负性公理 (Non-negativity)**：对于任意事件 A ∈ F，P(A) ≥ 0。
+1.  **非负性公理 (Non-negativity)** ：对于任意事件 A ∈ F，P(A) ≥ 0。
 2.  **正则性公理/规范性公理 (Normalization)**：P(Ω) = 1。
 3.  **可列可加性公理 (Countable Additivity)**：若 A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>n</sub>, ... 是一列两两互不相容的事件 (即 A<sub>i</sub> ∩ A<sub>j</sub> = ∅，当 i ≠ j)，则：
     \[ P(\bigcup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} P(A_i) \]

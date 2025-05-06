@@ -7,16 +7,66 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- KaTeX CSS (user's suggested version, moved to head) -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: 'Basic Probability Lecture Notes',
+      repo: '1587causalai/BasicProbabilityLectureNotes',
+      loadSidebar: true,
+      homepage: 'README.md',
+      subMaxLevel: 2,
+      search: 'auto',
+      latex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- Search plugin from user's example -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- KaTeX JS from user's example -->
+  <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <!-- docsify-latex plugin from user's example -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
+
+  <!-- Custom Plugin to fix CJK-Punctuation spacing for Markdown emphasis -->
+  <script>
+    function autoSpaceCjkPunctuationPlugin(hook, vm) {
+      hook.beforeEach(function (markdown) {
+        let tempMarkdown = markdown;
+        
+        // 规则1: 修正中文字符后紧跟英文左括号且无空格的情况
+        // 例如: "中文(English)" -> "中文 (English)"
+        const regexRule1 = /([\u4e00-\u9fff])(\((?=[A-Za-z0-9]))/g; // Using unicode range for CJK
+        tempMarkdown = tempMarkdown.replace(regexRule1, '$1 $2');
+
+        // 规则2: 在结束的强调标记 "**" 与紧随其后的特定中英文标点符号之间添加空格
+        // 例如: "text**：" -> "text** ：" 或 "text**:" -> "text** :"
+        const punctuationForRule2 = '[：。，；？！:]'; // 包含全角和半角冒号
+        const regexRule2 = new RegExp(`([^\s\\*])(\\*\\*)(${punctuationForRule2})`, 'g'); 
+        tempMarkdown = tempMarkdown.replace(regexRule2, '$1$2 $3');
+        
+        // 如果您的文档中也使用 __ 作为强调，并且遇到类似问题，可以修改或增加如下规则:
+        // const underscorePunctuationRule = '[：。，；？！:]';
+        // const regexRule3 = new RegExp(`([^\s_])(__)(${underscorePunctuationRule})`, 'g');
+        // tempMarkdown = tempMarkdown.replace(regexRule3, '$1$2 $3');
+
+        return tempMarkdown;
+      });
+    }
+
+    if (window.$docsify && window.$docsify.plugins && Array.isArray(window.$docsify.plugins)) {
+      window.$docsify.plugins.push(autoSpaceCjkPunctuationPlugin);
+    } else {
+      window.$docsify = window.$docsify || {};
+      window.$docsify.plugins = [autoSpaceCjkPunctuationPlugin];
+    }
+  </script>
 </body>
 </html>
