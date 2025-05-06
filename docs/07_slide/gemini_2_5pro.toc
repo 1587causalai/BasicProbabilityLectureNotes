@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{引言}{3}{0}{1}
+\beamer@sectionintoc {2}{切比雪夫不等式}{7}{0}{2}
+\beamer@sectionintoc {3}{弱大数定律}{10}{0}{3}
+\beamer@sectionintoc {4}{强大数定律}{12}{0}{4}
+\beamer@sectionintoc {5}{大数定律的应用}{18}{0}{5}
+\beamer@sectionintoc {6}{总结与展望}{21}{0}{6}
