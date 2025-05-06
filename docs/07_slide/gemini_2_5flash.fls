@@ -406,12 +406,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT ./pdf_normal_cauchy_comparison.png
 INPUT ./pdf_normal_cauchy_comparison.png
 INPUT ./pdf_normal_cauchy_comparison.png
-INPUT ./pdf_normal_cauchy_comparison.png
-INPUT ./pdf_normal_cauchy_comparison.png
-INPUT ./pdf_normal_cauchy_comparison.png
-INPUT ./pdf_normal_cauchy_comparison.png
-INPUT ./pdf_normal_cauchy_comparison.png
-INPUT ./pdf_normal_cauchy_comparison.png
 INPUT ./normal_mean_convergence.png
 INPUT ./normal_mean_convergence.png
 INPUT ./normal_mean_convergence.png

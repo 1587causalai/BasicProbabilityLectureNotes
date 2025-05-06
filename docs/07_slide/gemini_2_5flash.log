@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.16)  7 MAY 2025 02:28
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.16)  7 MAY 2025 03:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -958,6 +958,20 @@ Overfull \hbox (46.63939pt too wide) in paragraph at lines 59--59
  [][]  \TU/lmss/m/n/6 ([])  
  []
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 59.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 59.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 59.
 
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
  [][]  \TU/lmss/m/n/6 ([])  
@@ -970,23 +984,8 @@ Overfull \hbox (46.63939pt too wide) in paragraph at lines 84--84
  [][]  \TU/lmss/m/n/6 ([])  
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 84.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 84.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 84.
 
-
-Class beamer Warning: Frame text is shrunk by a factor of 14.81781 percent instead of 5 percent on input line 84.
+Class beamer Warning: Frame text is shrunk by a factor of 9.89075 percent instead of 5 percent on input line 84.
 
 
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
@@ -997,7 +996,7 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 
 ]
 
-Class beamer Warning: Frame text is shrunk by a factor of 14.81781 percent instead of 5 percent on input line 84.
+Class beamer Warning: Frame text is shrunk by a factor of 9.89075 percent instead of 5 percent on input line 84.
 
 
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
@@ -1008,7 +1007,7 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 
 ]
 
-Class beamer Warning: Frame text is shrunk by a factor of 14.81781 percent instead of 5 percent on input line 84.
+Class beamer Warning: Frame text is shrunk by a factor of 9.89075 percent instead of 5 percent on input line 84.
 
 
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
@@ -1048,49 +1047,18 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 [8
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 160--160
+Overfull \hbox (46.63939pt too wide) in paragraph at lines 159--159
  [][]  \TU/lmss/m/n/6 ([])  
  []
 
 File: pdf_normal_cauchy_comparison.png Graphic file (type bmp)
 <pdf_normal_cauchy_comparison.png>
-
-Class beamer Warning: Frame text is shrunk by a factor of 49.4049 percent instead of 10 percent on input line 160.
-
 
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
  [][]  \TU/lmss/m/n/6 ([])  
  []
 
 [9
-
-]
-File: pdf_normal_cauchy_comparison.png Graphic file (type bmp)
-<pdf_normal_cauchy_comparison.png>
-
-
-Class beamer Warning: Frame text is shrunk by a factor of 49.4049 percent instead of 10 percent on input line 160.
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[10
-
-]
-File: pdf_normal_cauchy_comparison.png Graphic file (type bmp)
-<pdf_normal_cauchy_comparison.png>
-
-
-Class beamer Warning: Frame text is shrunk by a factor of 49.4049 percent instead of 10 percent on input line 160.
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[11
 
 ]
 Overfull \hbox (46.63939pt too wide) in paragraph at lines 189--189
@@ -1108,7 +1076,28 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 File: cauchy_mean_no_convergence.png Graphic file (type bmp)
 <cauchy_mean_no_convergence.png>
 
-Class beamer Warning: Frame text is shrunk by a factor of 10.99396 percent instead of 10 percent on input line 189.
+Overfull \hbox (46.63939pt too wide) has occurred while \output is active
+ [][]  \TU/lmss/m/n/6 ([])  
+ []
+
+[10
+
+]
+Overfull \hbox (46.63939pt too wide) in paragraph at lines 210--210
+ [][]  \TU/lmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (46.63939pt too wide) has occurred while \output is active
+ [][]  \TU/lmss/m/n/6 ([])  
+ []
+
+[11
+
+]
+Overfull \hbox (46.63939pt too wide) in paragraph at lines 234--234
+ [][]  \TU/lmss/m/n/6 ([])  
+ []
 
 
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
@@ -1118,12 +1107,9 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 [12
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 211--211
+Overfull \hbox (46.63939pt too wide) in paragraph at lines 262--262
  [][]  \TU/lmss/m/n/6 ([])  
  []
-
-
-Class beamer Warning: Frame text is shrunk by a factor of 11.08246 percent instead of 10 percent on input line 211.
 
 
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
@@ -1133,14 +1119,6 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 [13
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 236--236
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Class beamer Warning: Frame text is shrunk by a factor of 13.8092 percent instead of 10 percent on input line 236.
-
-
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
  [][]  \TU/lmss/m/n/6 ([])  
  []
@@ -1148,7 +1126,7 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 [14
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 264--264
+Overfull \hbox (46.63939pt too wide) in paragraph at lines 279--279
  [][]  \TU/lmss/m/n/6 ([])  
  []
 
@@ -1167,7 +1145,7 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 [16
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 281--281
+Overfull \hbox (46.63939pt too wide) in paragraph at lines 306--306
  [][]  \TU/lmss/m/n/6 ([])  
  []
 
@@ -1179,26 +1157,16 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 [17
 
 ]
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
+Overfull \hbox (46.63939pt too wide) in paragraph at lines 321--321
  [][]  \TU/lmss/m/n/6 ([])  
  []
-
-[18
-
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 308--308
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Class beamer Warning: Frame text is shrunk by a factor of 18.6325 percent instead of 5 percent on input line 308.
 
 
 Overfull \hbox (46.63939pt too wide) has occurred while \output is active
  [][]  \TU/lmss/m/n/6 ([])  
  []
 
-[19
+[18
 
 ]
 Overfull \hbox (46.63939pt too wide) in paragraph at lines 331--331
@@ -1210,31 +1178,19 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
  [][]  \TU/lmss/m/n/6 ([])  
  []
 
+[19
+
+]
+Overfull \hbox (46.63939pt too wide) in paragraph at lines 339--339
+ [][]  \TU/lmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (46.63939pt too wide) has occurred while \output is active
+ [][]  \TU/lmss/m/n/6 ([])  
+ []
+
 [20
-
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 341--341
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[21
-
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 349--349
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[22
 
 ]
 \tf@nav=\write6
@@ -1259,12 +1215,12 @@ Package rerunfilecheck Info: File `gemini_2_5flash.out' has not changed.
 (rerunfilecheck)             Checksum: 145A496A7C7B1AFA6BC13679232DCB1B;594.
  ) 
 Here is how much of TeX's memory you used:
- 27835 strings out of 474773
- 634436 string characters out of 5757724
- 1948839 words of memory out of 5000000
- 49382 multiletter control sequences out of 15000+600000
- 568387 words of font info for 124 fonts, out of 8000000 for 9000
+ 27724 strings out of 474773
+ 627233 string characters out of 5757724
+ 1940839 words of memory out of 5000000
+ 49273 multiletter control sequences out of 15000+600000
+ 568371 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,16n,123p,529b,1022s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,123p,529b,989s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on gemini_2_5flash.xdv (22 pages, 290660 bytes).
+Output written on gemini_2_5flash.xdv (20 pages, 227624 bytes).

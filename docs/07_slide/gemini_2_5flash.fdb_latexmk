@@ -1,12 +1,12 @@
 # Fdb version 4
-["xdvipdfmx"] 1746556121.3361 "gemini_2_5flash.xdv" "gemini_2_5flash.pdf" "gemini_2_5flash" 1746556122.3246 0
-  "gemini_2_5flash.xdv" 1746556121.26791 290660 8cd6811181ae9803ee9a1b365b4a36f5 "xelatex"
+["xdvipdfmx"] 1746558590.73636 "gemini_2_5flash.xdv" "gemini_2_5flash.pdf" "gemini_2_5flash" 1746558591.73542 0
+  "gemini_2_5flash.xdv" 1746558590.66481 227624 db1a71cbf00eecb5be7839a64b2e04f2 "xelatex"
   (generated)
   "gemini_2_5flash.pdf"
   (rewritten before read)
-["xelatex"] 1746556119.79682 "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash.tex" "gemini_2_5flash.xdv" "gemini_2_5flash" 1746556122.32278 0
+["xelatex"] 1746558589.06339 "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash.tex" "gemini_2_5flash.xdv" "gemini_2_5flash" 1746558591.73347 0
   "/System/Library/Fonts/Menlo.ttc" 1744434969 2156036 ec05dfca6821d85440da0899493002c3 ""
-  "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash.tex" 1746556107.92724 20171 1a18862b25aa6ffd8e28aee360faf87b ""
+  "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash.tex" 1746558577.82057 16845 47068e63a323aa917ef62f1e72322fee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -222,11 +222,11 @@
   "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1723821489 10850182 43dc9ce46ab4b00500812cf30f5c84fc ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "cauchy_mean_no_convergence.png" 1746554865.44103 154211 e199447afa8d294a7c377def7e038dff ""
-  "gemini_2_5flash.aux" 1746556121.26678 4841 b7bde95ef9fa75ca2082991c2fb8e5e5 "xelatex"
-  "gemini_2_5flash.nav" 1746556121.26785 2691 f121806110d2f40fc100c8e3b211e5ee "xelatex"
-  "gemini_2_5flash.out" 1746556121.26761 594 145a496a7c7b1afa6bc13679232dcb1b "xelatex"
-  "gemini_2_5flash.tex" 1746556107.92724 20171 1a18862b25aa6ffd8e28aee360faf87b ""
-  "gemini_2_5flash.toc" 1746556121.26787 326 d5aad2bc4c9b0da83933d4208d36f40c "xelatex"
+  "gemini_2_5flash.aux" 1746558590.66373 4838 b469f1862a8c25be27d3cc9338e56425 "xelatex"
+  "gemini_2_5flash.nav" 1746558590.66473 2689 b637492ccea0d8893a6f04fc5a19c102 "xelatex"
+  "gemini_2_5flash.out" 1746558590.66446 594 145a496a7c7b1afa6bc13679232dcb1b "xelatex"
+  "gemini_2_5flash.tex" 1746558577.82057 16845 47068e63a323aa917ef62f1e72322fee ""
+  "gemini_2_5flash.toc" 1746558590.66476 326 5bd98abeb1c4c481d59d0b8c96b17bf4 "xelatex"
   "normal_mean_convergence.png" 1746554865.26126 169540 4bd102cba67875834173d2fd2bdd236e ""
   "pdf_normal_cauchy_comparison.png" 1746555861.33232 50721 d9f3de3322ee62e9b1d92ad5275c0ec6 ""
   (generated)
