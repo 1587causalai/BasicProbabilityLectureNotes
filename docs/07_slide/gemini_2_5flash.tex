@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb} % For symbols like \mathbb{E}, \lim, \sum
 \usepackage{amsthm} % For proof environments if needed (though not strictly used here)
+\usepackage{booktabs} % For better table rules
 
 % --- Theme and Appearance ---
 \usetheme{Madrid} % A popular, clean theme
@@ -263,20 +264,40 @@
 
 \begin{frame}{WLLN 与 SLLN 的区别与联系 (2)：柯西分布反例}
     \framesubtitle{期望不存在导致大数定律失效}
-    \textbf{回顾柯西分布的关键特性：}
-     \begin{itemize}
-        \item 期望\alert{不存在} $\implies$ 不满足LLN的期望存在条件。
-    \end{itemize}
+ 
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{特性} & \textbf{正态分布} & \textbf{柯西分布} \\
+        \midrule
+        均值 & 存在 ($\mu$) & 不存在(位置参数 $x_0$) \\
+        \midrule
+        方差 & 有限 ($\sigma^2$) & 不存在(尺度参数 $\gamma$) \\
+        \midrule
+        LLN & 成立 & 不成立  \\
+        \midrule
+        样本均值行为 & 收敛至 $\mu$ & 剧烈波动 \\
+        \bottomrule
+    \end{tabular}
+    \vspace{0.5cm} % Add some space after the table
+    \par % New paragraph before the caption-like text
+    \centering % Center the caption text
+    \small % Make the caption text a bit smaller
+    表：正态分布与柯西分布对比
+
     \pause
-    \textbf{对于i.i.d.柯西序列的样本均值 $\bar{X}_n$：}
+    \vspace{0.5cm}
+    \leftskip=0.5cm
+
+    \textbf{关键特性：}对于i.i.d.柯西序列的样本均值 $\bar{X}_n$
     \begin{itemize}
-        \item $\bar{X}_n \not\xrightarrow{P} \text{const}$
-        \item $\bar{X}_n \not\xrightarrow{a.s.} \text{const}$
-        \item \alert{惊人事实}：若 $X_i \sim C(0,1)$ i.i.d., 则 $\bar{X}_n = \frac{1}{n} \sum X_i \sim C(0,1)$ (\alert{仍为标准柯西分布}, 与 $n$ 无关!)
+       \item 期望\alert{不存在} $\implies$ 不满足LLN的期望存在条件, 即
+        \[ \bar{X}_n \not\xrightarrow{P} \text{const}, \quad \bar{X}_n \not\xrightarrow{a.s.} \text{const} \]
+       \item \alert{惊人事实}：若 $X_i \sim C(0,1)$ i.i.d., 则 $\bar{X}_n = \frac{1}{n} \sum X_i \sim C(0,1)$ (\alert{仍为标准柯西分布}, 与 $n$ 无关!)
     \end{itemize}
     \vspace{0.3cm}
-    \textit{与正态分布对比，凸显期望存在性的重要。}
 \end{frame}
+
 
 \section{大数定律的应用}
 % Shrink may be needed
