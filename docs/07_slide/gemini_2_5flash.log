@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.16)  7 MAY 2025 08:33
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.16)  7 MAY 2025 09:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -943,42 +943,13 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  TU/lmtt/b/n --> TU/lmtt/b/n on input line 40.
- (./gemini_2_5flash.nav)
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 40--40
- [][]  \TU/lmss/m/n/6 ([])  
- []
+ (./gemini_2_5flash.nav) [1
 
-
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 44--44
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[1
+] (./gemini_2_5flash.toc) [2
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 48--48
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-(./gemini_2_5flash.toc)
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[2
-
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 60--60
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
@@ -991,25 +962,11 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 60.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 60.
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[3
+ [3
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 85--85
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 
 Class beamer Warning: Frame text is shrunk by a factor of 9.89075 percent instead of 5 percent on input line 85.
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
 
 [4
 
@@ -1017,73 +974,32 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 
 Class beamer Warning: Frame text is shrunk by a factor of 9.89075 percent instead of 5 percent on input line 85.
 
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 [5
 
 ]
 
 Class beamer Warning: Frame text is shrunk by a factor of 9.89075 percent instead of 5 percent on input line 85.
 
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 [6
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 106--106
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <9> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 106.
+
 
 LaTeX Font Warning: Font shape `TU/STXihei(0)/m/it' undefined
 (Font)              using `TU/STXihei(0)/m/n' instead on input line 106.
 
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 [7
 
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 120--120
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[8
+] [8
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 160--160
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 File: pdf_normal_cauchy_comparison.png Graphic file (type bmp)
 <pdf_normal_cauchy_comparison.png>
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[9
+ [9
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 190--190
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 File: normal_mean_convergence.png Graphic file (type bmp)
 <normal_mean_convergence.png>
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
@@ -1094,68 +1010,18 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 190.
 File: cauchy_mean_no_convergence.png Graphic file (type bmp)
 <cauchy_mean_no_convergence.png>
+ [10
 
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
+] [11
 
-[10
+] [12
 
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 211--211
- [][]  \TU/lmss/m/n/6 ([])  
- []
+] [13
 
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[11
+] [14
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 235--235
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[12
-
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 263--263
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[13
-
-]
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[14
-
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 299--299
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
 Overfull \vbox (10.9451pt too high) detected at line 299
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
  []
 
 [15
@@ -1164,54 +1030,15 @@ Overfull \hbox (46.63939pt too wide) has occurred while \output is active
 Overfull \vbox (10.9451pt too high) detected at line 299
  []
 
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 [16
 
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 327--327
- [][]  \TU/lmss/m/n/6 ([])  
- []
+] [17
 
+] [18
 
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[17
+] [19
 
 ]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 342--342
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[18
-
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 352--352
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
-[19
-
-]
-Overfull \hbox (46.63939pt too wide) in paragraph at lines 366--366
- [][]  \TU/lmss/m/n/6 ([])  
- []
-
 
 Package fontspec Warning: Font "STFangsong" does not contain requested Script
 (fontspec)                "CJK".
@@ -1238,11 +1065,6 @@ Package fontspec Info: Font family 'STFangsong(0)' created for font
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"STFangsong/OT:language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-
-Overfull \hbox (46.63939pt too wide) has occurred while \output is active
- [][]  \TU/lmss/m/n/6 ([])  
- []
 
 [20
 
@@ -1277,4 +1099,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  128i,16n,123p,529b,989s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on gemini_2_5flash.xdv (20 pages, 227592 bytes).
+Output written on gemini_2_5flash.xdv (20 pages, 223960 bytes).
