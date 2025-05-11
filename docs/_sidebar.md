@@ -7,3 +7,7 @@
 *   [6. 多维随机变量及其分布](06_multidimensional_random_variables.md)
 *   [7. 大数定律](07_law_of_large_numbers.md)
 *   [8. 中心极限定理](08_central_limit_theorem.md)
+
+
+*  附录
+    *   [附录A Cauchy分布](appendix_a_cauchy_distribution.md)

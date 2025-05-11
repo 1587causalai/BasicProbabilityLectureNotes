@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1746577631.66712 "gemini_2_5flash_speaking.xdv" "gemini_2_5flash_speaking.pdf" "gemini_2_5flash_speaking" 1746577631.9774 0
-  "gemini_2_5flash_speaking.xdv" 1746577631.62074 176620 b09356bfd368673caabeea38979f0c82 "xelatex"
+["xdvipdfmx"] 1746705592.97308 "gemini_2_5flash_speaking.xdv" "gemini_2_5flash_speaking.pdf" "gemini_2_5flash_speaking" 1746705593.36045 0
+  "gemini_2_5flash_speaking.xdv" 1746705592.94571 176620 541044daf07618d8ffc5d2e1db738042 "xelatex"
   (generated)
   "gemini_2_5flash_speaking.pdf"
   (rewritten before read)
-["xelatex"] 1746577631.04938 "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash_speaking.tex" "gemini_2_5flash_speaking.xdv" "gemini_2_5flash_speaking" 1746577631.97675 0
+["xelatex"] 1746705592.39256 "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash_speaking.tex" "gemini_2_5flash_speaking.xdv" "gemini_2_5flash_speaking" 1746705593.35982 0
   "/Users/gongqian/DailyLog/projects/BasicProbabilityLectureNotes/docs/07_slide/gemini_2_5flash_speaking.tex" 1746577625.3405 33600 cf3b0f288a4258e0a6accb468d46a4b5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -75,7 +75,7 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1723821489 10850182 43dc9ce46ab4b00500812cf30f5c84fc ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "gemini_2_5flash_speaking.aux" 1746577631.62038 33 e6d77a6cc1977d88a849501f83258f9d "xelatex"
+  "gemini_2_5flash_speaking.aux" 1746705592.94509 33 e6d77a6cc1977d88a849501f83258f9d "xelatex"
   "gemini_2_5flash_speaking.tex" 1746577625.3405 33600 cf3b0f288a4258e0a6accb468d46a4b5 ""
   (generated)
   "gemini_2_5flash_speaking.aux"
