@@ -10,4 +10,5 @@
 
 
 *  附录
-    *   [附录A Cauchy分布](appendix_a_cauchy_distribution.md)
+    *   [附录A 高维Cauchy分布](appendix_a_cauchy_distribution.md)
+    *   [附录B 柯西分布间的 KL 散度平方根与度量空间](appendix_cauchy_kld_distance.md)
