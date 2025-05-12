@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.16)  8 MAY 2025 19:59
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.16)  11 MAY 2025 19:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -417,7 +417,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:mapping=tex-text;!
-[2] [3] [4] [5] [6] [7] [8] [9]
+[2] [3] [4] [5] [6] [7]
+Overfull \hbox (14.77997pt too wide) in paragraph at lines 207--208
+[]\TU/FandolSong-Regular(0)/b/n/10.53937 弱 大 数 定 律 \TU/lmr/bx/n/10.53937 (WLLN) \TU/FandolSong-Regular(0)/m/n/10.53937 描 述 的 是\TU/lmr/m/n/10.53937 ” \TU/FandolSong-Regular(0)/m/n/10.53937 依 概 率 收 敛\TU/lmr/m/n/10.53937 ”\TU/FandolSong-Regular(0)/m/n/10.53937 ，|  用 $[]$ 表 示。|  它 的 数 学 形 式 是 $[][] []\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 j[] ^^@
+ []
+
+
+Overfull \hbox (26.2169pt too wide) in paragraph at lines 208--209
+[]\TU/FandolSong-Regular(0)/b/n/10.53937 强 大 数 定 律 \TU/lmr/bx/n/10.53937 (SLLN) \TU/FandolSong-Regular(0)/m/n/10.53937 描 述 的 是\TU/lmr/m/n/10.53937 ” \TU/FandolSong-Regular(0)/m/n/10.53937 几 乎 必 然 收 敛\TU/lmr/m/n/10.53937 ”\TU/FandolSong-Regular(0)/m/n/10.53937 ，|  用 $[]$ 表 示。|  它 的 数 学 形 式 是 $[]\OT1/cmr/m/n/10.53937 ([][] [] =
+ []
+
+[8] [9]
 Missing character: There is no π (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
 [10] [11] [12] (./gemini_2_5flash_speaking.aux)
  ***********
@@ -432,6 +442,6 @@ Here is how much of TeX's memory you used:
  30585 multiletter control sequences out of 15000+600000
  567387 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,12n,97p,461b,494s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,97p,461b,518s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on gemini_2_5flash_speaking.xdv (12 pages, 176620 bytes).
+Output written on gemini_2_5flash_speaking.xdv (12 pages, 175296 bytes).
