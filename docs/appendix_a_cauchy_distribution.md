@@ -9,7 +9,7 @@
 ### 1. 背景：多元 t 分布 (Multivariate t-distribution)
 
 **定义与构造背景：**
-多元 t 分布是一元 t 分布向多维空间的自然推广。它通常由一个服从多元正态分布的随机向量，除以一个独立的、经自由度调整的卡方分布随机变量的平方根来定义。这种构造使其具有比多元正态分布更“重”的尾部，从而在处理含有异常值的数据时更为稳健。
+多元 t 分布是一元 t 分布向多维空间的自然推广。它通常由一个服从多元正态分布的随机向量，除以一个独立的、经自由度调整的卡方分布随机变量的平方根来定义。这种构造使其具有比多元正态分布更"重"的尾部，从而在处理含有异常值的数据时更为稳健。
 
 **数学定义：**
 假设有一个 $p$ 维随机向量 $\mathbf{Z}$ 服从均值为 $\mathbf{0}$、协方差矩阵为 $\mathbf{\Sigma}$ (一个 $p \times p$ 的正定矩阵) 的多元正态分布，记为 $\mathbf{Z} \sim N_p(\mathbf{0}, \mathbf{\Sigma})$。
@@ -102,6 +102,68 @@ $$
 f_{\text{Cauchy}}(\mathbf{t}; \mathbf{0}, \mathbf{I}) = \frac{\Gamma\left(\frac{p+1}{2}\right)}{\pi^{(p+1)/2}} \left[1 + \mathbf{t}'\mathbf{t}\right]^{-\frac{p+1}{2}}
 $$
 其中 $\mathbf{t}'\mathbf{t} = \sum_{i=1}^p t_i^2$ 是向量 $\mathbf{t}$ 的平方欧几里得范数。
+
+### 3. 线性组合的性质 (Property of Linear Combinations)
+
+高维柯西分布 $\mathbf{T} \sim \text{Cauchy}_p(\mathbf{\mu}, \mathbf{\Sigma})$ 拥有一个重要的"稳定性"质：其任意（非零）线性组合仍然是一个（一维）柯西分布。
+
+假设 $\mathbf{a} = (a_1, a_2, \dots, a_p)'$ 是一个非零的 $p$ 维常数向量。我们关注标量随机变量 $Y = \mathbf{a}' \mathbf{T} = \sum_{i=1}^p a_i T_i$ 的分布。
+
+结论是：
+\[ Y = \mathbf{a}' \mathbf{T} \sim \text{Cauchy}(x_0, \gamma_{eff}) \]
+其中：
+*   **位置参数** (Location parameter) 为： $x_0 = \mathbf{a}' \mathbf{\mu}$
+*   **有效尺度参数** (Effective scale parameter) 为： $\gamma_{eff} = \sqrt{\mathbf{a}' \mathbf{\Sigma} \mathbf{a}}$
+    (注意：这里的 $\mathbf{\Sigma}$ 是高维柯西分布的尺度矩阵，$\mathbf{a}' \mathbf{\Sigma} \mathbf{a}$ 是一个正标量，其平方根 $\gamma_{eff}$ 定义了结果柯西分布的尺度。)
+
+**推导简述 (基于构造法)：**
+高维柯西分布 $\mathbf{T}$ 可以通过 $\mathbf{T} = \mathbf{\mu} + \frac{\mathbf{Z}}{\sqrt{U}}$ 构造得到，其中 $\mathbf{Z} \sim N_p(\mathbf{0}, \mathbf{\Sigma})$ 是一个多元正态随机向量，而 $U \sim \chi^2(1)$ 是一个独立的自由度为1的卡方随机变量 ($\sqrt{U}$ 服从半正态分布)。
+考虑线性组合：
+\[ \mathbf{a}' \mathbf{T} = \mathbf{a}' (\mathbf{\mu} + \frac{\mathbf{Z}}{\sqrt{U}}) = \mathbf{a}' \mathbf{\mu} + \frac{\mathbf{a}' \mathbf{Z}}{\sqrt{U}} \]
+我们知道，多元正态分布的线性组合仍然是正态分布：$\mathbf{a}' \mathbf{Z} \sim N(0, \mathbf{a}' \mathbf{\Sigma} \mathbf{a})$。
+令 $\gamma_{eff}^2 = \mathbf{a}' \mathbf{\Sigma} \mathbf{a}$ (这是一个正标量，代表了投影方向上的尺度平方)。则 $\gamma_{eff} = \sqrt{\mathbf{a}' \mathbf{\Sigma} \mathbf{a}}$。
+我们可以将 $\mathbf{a}' \mathbf{Z}$ 写成 $\gamma_{eff} W$，其中 $W = \frac{\mathbf{a}' \mathbf{Z}}{\gamma_{eff}} \sim N(0, 1)$ 是一个标准正态随机变量。
+代入上式：
+\[ \mathbf{a}' \mathbf{T} = \mathbf{a}' \mathbf{\mu} + \frac{\gamma_{eff} W}{\sqrt{U}} = \mathbf{a}' \mathbf{\mu} + \gamma_{eff} \left( \frac{W}{\sqrt{U/1}} \right) \]
+关键在于识别括号中的项：$\frac{W}{\sqrt{U/1}}$。由于 $W \sim N(0, 1)$ 且 $U \sim \chi^2(1)$ 独立，这个比率正好是标准柯西分布 $\text{Cauchy}(0, 1)$ 的构造方式之一（标准正态除以独立的自由度为1的卡方变量的平方根）。
+令 $C = \frac{W}{\sqrt{U/1}} \sim \text{Cauchy}(0, 1)$。
+那么 $\mathbf{a}' \mathbf{T} = \mathbf{a}' \mathbf{\mu} + \gamma_{eff} C$。
+根据一维柯西分布的线性变换性质：如果 $C \sim \text{Cauchy}(x_c, \gamma_c)$，则 $b + aC \sim \text{Cauchy}(b + ax_c, |a|\gamma_c)$。
+在此处，$x_c=0$, $\gamma_c=1$, $b = \mathbf{a}' \mathbf{\mu}$, $a = \gamma_{eff}$。
+因此：
+\[ \mathbf{a}' \mathbf{T} \sim \text{Cauchy}(\mathbf{a}' \mathbf{\mu} + \gamma_{eff} \cdot 0, |\gamma_{eff}| \cdot 1) = \text{Cauchy}(\mathbf{a}' \mathbf{\mu}, \gamma_{eff}) \]
+代回 $\gamma_{eff} = \sqrt{\mathbf{a}' \mathbf{\Sigma} \mathbf{a}}$，即得到最终结果。
+
+这个性质表明高维柯西分布对于线性变换是"封闭"的，其投影到任意方向上仍然保持柯西分布的形式，只是位置和尺度参数会相应调整。
+
+### 4. 特例：对角尺度矩阵 (Special Case: Diagonal Scale Matrix)
+
+为了更深入地理解高维柯西分布的结构，我们考虑一个重要的特例：假设 $p$ 维随机向量 $\mathbf{T}$ 服从高维柯西分布 $\text{Cauchy}_p(\mathbf{\mu}, \mathbf{\Sigma})$，且其尺度矩阵 $\mathbf{\Sigma}$ 是一个对角矩阵。
+
+设 $\mathbf{\mu} = (\mu_1, \mu_2, \dots, \mu_p)'$ 为位置参数向量。尺度矩阵 $\mathbf{\Sigma}$ 具有以下形式：
+\[ \mathbf{\Sigma} = \text{diag}(\gamma_1^2, \gamma_2^2, \dots, \gamma_p^2) = \begin{pmatrix} \gamma_1^2 & 0 & \dots & 0 \\ 0 & \gamma_2^2 & \dots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & \gamma_p^2 \end{pmatrix} \]
+这里，$\gamma_i > 0$ 是与第 $i$ 个分量 $T_i$ 相关联的**尺度参数**，这与一维柯西分布 $\text{Cauchy}(\mu_i, \gamma_i)$ 中的尺度参数 $\gamma_i$ 相对应。
+
+**边际分布与分量依赖性：**
+在此设定下，每个分量 $T_i$ 的边际分布确实是一个一维柯西分布，即 $T_i \sim \text{Cauchy}(\mu_i, \gamma_i)$。
+然而，需要特别注意的是，即使尺度矩阵 $\mathbf{\Sigma}$ 是对角的，向量 $\mathbf{T}$ 的各个分量 $T_1, \dots, T_p$ **通常也不是相互统计独立的**。这源于高维柯西分布的一种构造方式：它可以看作是一个多元正态向量 $\mathbf{Z} \sim N_p(\mathbf{0}, \mathbf{\Sigma})$ 除以一个独立的 $\sqrt{U}$，其中 $U \sim \chi^2(1)$。当 $\mathbf{\Sigma}$ 是对角时，$\mathbf{Z}$ 的分量 $Z_i \sim N(0, \gamma_i^2)$ 是独立的。但是，由于所有 $T_i = \mu_i + Z_i/\sqrt{U}$ 都依赖于**同一个**随机变量 $U$，这就在 $T_i$ 之间引入了相关性。因此，高维柯西分布的联合密度函数**不能**简单地写成各边际柯西分布密度函数的乘积。
+
+**概率密度函数 (PDF)：**
+当 $\mathbf{\Sigma}$ 是对角矩阵 $\text{diag}(\gamma_1^2, \dots, \gamma_p^2)$ 时，其逆矩阵为 $\mathbf{\Sigma}^{-1} = \text{diag}(1/\gamma_1^2, \dots, 1/\gamma_p^2)$，其行列式的平方根为 $|\mathbf{\Sigma}|^{1/2} = \prod_{j=1}^p \gamma_j$。
+此时，高维柯西分布的概率密度函数 (PDF) 具体化为：
+\[ f_{\text{Cauchy}}(\mathbf{t}; \mathbf{\mu}, \mathbf{\Sigma}) = \frac{\Gamma\left(\frac{p+1}{2}\right)}{\pi^{(p+1)/2} \left(\prod_{j=1}^p \gamma_j\right)} \left[1 + \sum_{i=1}^p \left(\frac{t_i-\mu_i}{\gamma_i}\right)^2\right]^{-\frac{p+1}{2}} \]
+
+**线性组合性质的验证：**
+我们来验证之前提到的线性组合性质。考虑线性组合 $Y = \mathbf{a}' \mathbf{T} = \sum_{i=1}^p a_i T_i$。根据一般性质， $Y$ 应服从 $\text{Cauchy}(x_0, \gamma_{eff})$，其中 $x_0 = \mathbf{a}' \mathbf{\mu}$ 且 $\gamma_{eff} = \sqrt{\mathbf{a}' \mathbf{\Sigma} \mathbf{a}}$。
+在此特例中：
+*   位置参数为：$x_0 = \sum_{i=1}^p a_i \mu_i$
+*   有效尺度参数 $\gamma_{eff}$ 的平方为：
+    \[ \gamma_{eff}^2 = \mathbf{a}' \mathbf{\Sigma} \mathbf{a} = (a_1, \dots, a_p) \begin{pmatrix} \gamma_1^2 & & \\ & \ddots & \\ & & \gamma_p^2 \end{pmatrix} \begin{pmatrix} a_1 \\ \vdots \\ a_p \end{pmatrix} = \sum_{i=1}^p a_i^2 \gamma_i^2 \]
+*   因此，有效尺度参数为：$\gamma_{eff} = \sqrt{\sum_{i=1}^p a_i^2 \gamma_i^2}$
+
+结论是，对于具有对角尺度矩阵的高维柯西分布，其线性组合 $Y = \mathbf{a}'\mathbf{T}$ 服从：
+\[ Y \sim \text{Cauchy}\left(\sum_{i=1}^p a_i \mu_i, \sqrt{\sum_{i=1}^p a_i^2 \gamma_i^2}\right) \]
+这与一般公式的结果一致，并清楚地展示了当尺度矩阵为对角时，新柯西分布的参数是如何由原始参数和线性系数决定的。
 
 ## 二、两个独立正态分布随机变量之比
 
@@ -244,9 +306,11 @@ $$t = \frac{\bar{X} - \mu_0}{S/\sqrt{n}}$$
 
 **总结来说：**
 
-多元t分布的统计量可以看作是**一个标准化的多元正态随机向量，但其标准化过程用到的“方差”或“尺度”本身也是一个随机量（由卡方分布派生而来）**。这使得多元t分布比多元正态分布具有更“重”的尾部，能更好地描述那些包含异常值或者方差不完全确定的数据。
+多元t分布的统计量可以看作是**一个标准化的多元正态随机向量，但其标准化过程用到的"方差"或"尺度"本身也是一个随机量（由卡方分布派生而来）**。这使得多元t分布比多元正态分布具有更"重"的尾部，能更好地描述那些包含异常值或者方差不完全确定的数据。
 
 文档 `appendix_a_cauchy_distribution.md` 中给出的数学定义：
 $$ \mathbf{T} = \mathbf{\mu} + \frac{\mathbf{Z}}{\sqrt{U/\nu}} $$
 其中 $\mathbf{Z} \sim N_p(\mathbf{0}, \mathbf{\Sigma})$ 且 $U \sim \chi^2(\nu)$ 且 $\mathbf{Z}$ 与 $U$ 独立，这个 $\mathbf{T}$ 就服从 $t_p(\mathbf{\mu}, \mathbf{\Sigma}, \nu)$。
+
+
 
