@@ -194,3 +194,58 @@ $$ P(Y=c) = \frac{\sigma_W^2 + \mu_{Wc}^2}{m\sigma_W^2 + \sum_{l=1}^m \mu_{Wl}^2
 *   它依赖于 $W_k$ 的独立性和同方差性，这是对 $A$ 和 $\Sigma_Z$ 的一个联合约束 ($A \Sigma_Z A^T = \sigma_W^2 I_m$)。
 *   如果所有 $\mu_{Wc}=0$ (例如 $\mu_Z=0$)，则 $P(Y=c) = \sigma_W^2 / (m\sigma_W^2) = 1/m$，模型输出均匀概率。非均匀概率依赖于 $A\mu_Z \neq 0$。
 *   激活函数 $G(x)=x^2$ 确保了 $V_k \ge 0$，这对于后续的概率解释和期望计算（如Dirichlet相关的分布）是自然的。
+
+
+## 方案三： 分段函数法 (Piecewise Function)
+
+
+构建的随机变量转换模型中：
+$Z \xrightarrow{\text{Linear (A)}} W \xrightarrow{\text{Activate (G)}} V \xrightarrow{\text{Normalize}} U$
+其中 $P(Y=c|Z=z) = U_c(z)$，您希望找到一种或多种具体的**激活函数 $G_k$ 的选择**、**概率归一化方法 $\text{Normalize}(\cdot)$ 的选择**，以及可能对模型参数（如 $A$ 矩阵、初始分布的参数、激活函数的参数）施加的**特定约束条件**，使得最终的无条件概率 $P(Y=c) = E_Z[U_c(Z)]$ 能够表示为一个**封闭的、解析的数学表达式**。
+
+
+
+构建的随机变量转换模型中：
+$Z \xrightarrow{\text{Linear (A)}} W (r.v.) \xrightarrow{\text{Piecewise Function}}  U$
+
+1, 2, ..., m 是m个类别, 且 $\theta_1 < \theta_2 < ... < \theta_{m-1}$ and $p_0, p_1, p_2, ..., p_{m-1}$ 是m个概率, 且 $p_0 + p_1 + p_2 + ... + p_{m-1} = 1$
+
+$$U(W; \theta_1, ..., \theta_{m-1}) =  p_0 + \sum_{k=1}^{m-1} p_k I(W > \theta_k)$$
+
+
+$W < \theta_1$ 时， $U(W) = p_0$
+
+$W  < \theta_2$ 时， $U(W) = p_0 + p_1$
+
+$W < \theta_3$ 时， $U(W) = p_0 + p_1 + p_2$
+
+...
+
+$W < \theta_{m-1}$ 时， $U(W) = p_0 + p_1 + p_2 + ... + p_{m-2}$
+
+
+$W \in (\theta_{m-1}, \infty)$ 时， $U(W) = p_0 + p_1 + p_2 + ... + p_{m-1}=1$
+
+
+$$P(Y=k) = E[U(W) I_{W \in [\theta_k, \theta_{k+1})} ] = E[U(W) I_{W > \theta_{k}} ] - E[U(W) I_{W > \theta_{k+1}}] = p_k$$
+
+
+
+
+$$E[U(W) I_{W > \theta_k}]  = \sum_{i=k}^{m-1} p_i I_{W > \theta_i} I_{W>\theta_k}$$
+
+
+
+
+
+## 总结与对比
+
+| 特性/方案         | 原始柯西对称 (Cauchy-Symmetry)                                    | 高斯-平方 (Gaussian-Square)                                                                     | 高斯-Probit对称 (Gaussian-ProbitSymmetry)                                     |
+| :---------------- | :---------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
+| **$Z$ 分布**      | (椭球)多元柯西                                                    | 多元高斯 $N(\mu_Z, \Sigma_Z)$                                                                    | 多元高斯 $N(\mu_Z, \Sigma_Z)$                                                 |
+| **$A$ 约束**      | $m$ 偶数, $A_{k+m/2,\cdot} = -A_{k,\cdot}$                           | $A\Sigma_Z A^T = \sigma_W^2 I_m$ ($W_k$ 独立同方差)                                                | $m$ 偶数, $A_{k+m/2,\cdot} = -A_{k,\cdot}$                                   |
+| **$G_k(x)$**      | 柯西CDF: $\frac{1}{2}+\frac{1}{\pi}\arctan(\frac{x}{\gamma_k^{(act)}})$ | 平方: $x^2$                                                                                     | 高斯CDF: $\Phi(\frac{x}{\beta_k^{(act)}})$                                      |
+| **$G_k$ 约束**    | $\gamma_{k+m/2}^{(act)} = \gamma_k^{(act)}$                           | 无 (所有 $G_k$ 相同)                                                                              | $\beta_{k+m/2}^{(act)} = \beta_k^{(act)}$                                     |
+| **归一化分母**    | 常数 $m/2$                                                        | $\sum W_l^2$ (随机变量)                                                                         | 常数 $m/2$                                                                 |
+| **$P(Y=c)$ 公式** | $\frac{1}{m} + \frac{2}{m\pi}\arctan\left(\frac{\mu_{Wc}}{\gamma_{Wc}+\gamma_c^{(act)}}\right)$ | $\frac{\sigma_W^2 + \mu_{Wc}^2}{m\sigma_W^2 + \sum_l \mu_{Wl}^2}$                               | $\frac{2}{m} \Phi\left(\frac{\mu_{Wc}}{\sqrt{\sigma_{Wc}^2 + (\beta_c^{(act)})^2}}\right)$ |
+| **非均匀条件**    | $A\mu_Z \neq 0$ (对于椭球柯西)                                      | $A\mu_Z \neq 0$                                                                                 | $A\mu_Z \neq 0$                                                              |
