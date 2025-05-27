@@ -232,7 +232,7 @@ $$P(Y=k) = E[U(W) I_{W \in [\theta_k, \theta_{k+1})} ] = E[U(W) I_{W > \theta_{k
 
 
 
-$$E[U(W) I_{W > \theta_k}]  = \sum_{i=k}^{m-1} p_i I_{W > \theta_i} I_{W>\theta_k}$$
+$$E[U(W) I_{W > \theta_k}]  = \sum_{i=k}^{m-1} p_i I_{W > \theta_i, W>\theta_k}$$
 
 
 
